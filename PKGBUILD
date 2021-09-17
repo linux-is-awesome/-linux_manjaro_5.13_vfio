@@ -9,11 +9,9 @@ pkgname=('linux515' 'linux515-headers')
 _kernelname=-MANJARO
 _basekernel=5.15
 _basever=515
-rc=rc1
+_rc=rc1
 _commit=6880fa6c56601bb8ed59df6c30fd390cc5f6dd8f
-_shortcommit=.${_rc}.d0822.g${_commit:0:7}
-_pkgver=${_basekernel}${_shortcommit}
-pkgver=5.15.rc1.d0822.ge22ce8e
+pkgver=5.15.rc1.g6880fa6
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -31,7 +29,7 @@ makedepends=('bc'
     'tar'
     'xz')
 options=('!strip')
-source=("linux-${_pkgver}.zip::https://codeload.github.com/torvalds/linux/zip/$_commit"
+source=("https://codeload.github.com/torvalds/linux/zip/$_commit"
         #"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.xz"
         #"https://www.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
         'config'
@@ -88,6 +86,10 @@ sha256sums=('4e9cd5494229d40af18a2e9105378d45a354e4b14bed7a261cc7aecae6edaff8'
             '27471eee564ca3149dd271b0817719b5565a9594dc4d884fe3dc51a5f03832bc'
             '60e295601e4fb33d9bf65f198c54c7eb07c0d1e91e2ad1e0dd6cd6e142cb266d'
             '035ea4b2a7621054f4560471f45336b981538a40172d8f17285910d4e0e0b3ef')
+
+pkgver() {
+  printf %s.%s.g%s "$_basekernel" "$_rc" "${_commit:0:7}"
+}
 
 prepare() {
   cd linux-$_commit
