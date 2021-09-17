@@ -44,31 +44,29 @@ source=("linux-${_pkgver}.zip::https://codeload.github.com/torvalds/linux/zip/$_
 #        '0102-iomap-iomap_bmap-should-accept-unwritten-maps.patch'
 #        '0103-futex.patch'
 #        '0104-revert-xhci-Add-support-for-Renesas-controller-with-memory.patch'
-        '0107-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
+        '0105-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
         # Lenovo + AMD
-        '0302-lenovo-wmi2.patch'
+        '0201-lenovo-wmi2.patch'
         # other patches
         # Bootsplash
-        '0401-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'        
-        '0402-revert-fbcon-remove-no-op-fbcon_set_origin.patch'
-        '0403-revert-fbcon-remove-soft-scrollback-code.patch'
-        '0501-bootsplash.patch'
-        '0502-bootsplash.patch'
-        '0503-bootsplash.patch'
-        '0504-bootsplash.patch'
-        '0505-bootsplash.patch'
-        '0506-bootsplash.patch'
-        '0507-bootsplash.patch'
-        '0508-bootsplash.patch'
-        '0509-bootsplash.patch'
-        '0510-bootsplash.patch'
-        '0511-bootsplash.patch'
-        '0512-bootsplash.patch'
-        '0513-bootsplash.gitpatch'
-        )
+        '0301-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'        
+        '0302-revert-fbcon-remove-no-op-fbcon_set_origin.patch'
+        '0303-revert-fbcon-remove-soft-scrollback-code.patch'
+        '0401-bootsplash.patch'
+        '0402-bootsplash.patch'
+        '0403-bootsplash.patch'
+        '0404-bootsplash.patch'
+        '0405-bootsplash.patch'
+        '0406-bootsplash.patch'
+        '0407-bootsplash.patch'
+        '0408-bootsplash.patch'
+        '0409-bootsplash.patch'
+        '0410-bootsplash.patch'
+        '0411-bootsplash.patch'
+        '0412-bootsplash.patch'
+        '0413-bootsplash.gitpatch')
 sha256sums=('4e9cd5494229d40af18a2e9105378d45a354e4b14bed7a261cc7aecae6edaff8'
-            '2f64b8f781beec58a888d716d8315cb96730c710d157ab7a09cb1135a90279f8'
-            'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
+            'deff29776b7f570d99280313c873ef804cf9c81e24056e889307dd6c921b8549'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'df5843818f1571841e1a8bdbe38d7f853d841f38de46d6a6a5765de089495578'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
@@ -109,7 +107,7 @@ prepare() {
   done
 
   msg2 "0513-bootsplash"
-  git apply -p1 < "../0513-bootsplash.gitpatch"
+  git apply -p1 < "../0413-bootsplash.gitpatch"
 
   msg2 "add config"
   cat "../config" > ./.config
