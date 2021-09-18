@@ -11,7 +11,7 @@ _basekernel=5.15
 _basever=515
 _rc=rc1
 _commit=6880fa6c56601bb8ed59df6c30fd390cc5f6dd8f
-pkgver=5.15.rc1.g6880fa6
+pkgver=5.15.rc1.210918.g6880fa6
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -88,7 +88,7 @@ sha256sums=('4e9cd5494229d40af18a2e9105378d45a354e4b14bed7a261cc7aecae6edaff8'
             '035ea4b2a7621054f4560471f45336b981538a40172d8f17285910d4e0e0b3ef')
 
 pkgver() {
-  printf %s.%s.g%s "$_basekernel" "$_rc" "${_commit:0:7}"
+  printf %s.%s.%s.g%s "$_basekernel" "$_rc" "$(date +%y%m%d)" "${_commit:0:7}"
 }
 
 prepare() {
