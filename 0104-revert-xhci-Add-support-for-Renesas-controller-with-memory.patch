@@ -60,16 +60,6 @@
  	reset = devm_reset_control_get_optional_exclusive(&dev->dev, NULL);
  	if (IS_ERR(reset))
  		return PTR_ERR(reset);
-@@ -422,9 +404,6 @@ static void xhci_pci_remove(struct pci_d
- 	struct xhci_hcd *xhci;
- 
- 	xhci = hcd_to_xhci(pci_get_drvdata(dev));
--	if (xhci->quirks & XHCI_RENESAS_FW_QUIRK)
--		renesas_xhci_pci_exit(dev);
--
- 	xhci->xhc_state |= XHCI_STATE_REMOVING;
- 
- 	if (xhci->quirks & XHCI_DEFAULT_PM_RUNTIME_ALLOW)
 @@ -578,26 +557,14 @@ static void xhci_pci_shutdown(struct usb
  
  /*-------------------------------------------------------------------------*/
