@@ -261,5 +261,6 @@ package_linux515-headers() {
   find ${_builddir} -name '*.orig' -delete
 
   # Fix permissions
-  chmod -R u=rwX,go=rX "${_builddir}"
+  find -P "${_builddir}" -type f -print | xargs chmod 0644
+  find -P "${_builddir}" -type d -print | xargs chmod 0755
 }
