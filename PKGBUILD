@@ -259,8 +259,4 @@ package_linux515-headers() {
   
   # remove unwanted files
   find ${_builddir} -name '*.orig' -delete
-
-  # Fix permissions
-  find -P "${_builddir}" -type f -print | xargs chmod 0644
-  find -P "${_builddir}" -type d -print | xargs chmod 0755
 }
