@@ -10,8 +10,8 @@ _kernelname=-MANJARO
 _basekernel=5.15
 _basever=515
 _rc=rc4
-_commit=9e1ff307c779ce1f0f810c7ecce3d95bbae40896
-pkgver=5.15.rc4.211005.g9e1ff30
+_commit=64570fbc14f8d7cb3fe3995f20e26bc25ce4b2cc
+pkgver=5.15.rc4.211011.g64570fb
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -63,7 +63,7 @@ source=("https://codeload.github.com/torvalds/linux/zip/$_commit"
         '0411-bootsplash.patch'
         '0412-bootsplash.patch'
         '0413-bootsplash.gitpatch')
-sha256sums=('abcae66cc5805622796bc9d0774132bebc20bbad69b44857dc7058254483f020'
+sha256sums=('1b96b58b5eb8e7d1d500f869dd6036a22c942d1b10fd78be5763e1b5d6460e4e'
             'deff29776b7f570d99280313c873ef804cf9c81e24056e889307dd6c921b8549'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'df5843818f1571841e1a8bdbe38d7f853d841f38de46d6a6a5765de089495578'
