@@ -7,7 +7,7 @@
 pkgbase=linux515
 pkgname=('linux515' 'linux515-headers')
 _kernelname=-MANJARO
-_basekernel=5.15
+_basekernel=5.15.0
 _basever=515
 pkgver=5.15
 pkgrel=1
