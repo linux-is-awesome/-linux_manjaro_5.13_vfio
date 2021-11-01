@@ -130,8 +130,7 @@ prepare() {
 }
 
 build() {
-  cd linux-$_commit
-#  cd "linux-${_basekernel}"
+  cd "linux-${_basekernel}"
 
   msg "build"
   make ${MAKEFLAGS} LOCALVERSION= bzImage modules
