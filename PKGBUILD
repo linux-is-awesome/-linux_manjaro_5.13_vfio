@@ -9,9 +9,7 @@ pkgname=('linux515' 'linux515-headers')
 _kernelname=-MANJARO
 _basekernel=5.15
 _basever=515
-_rc=rc6
-_commit=519d81956ee277b4419c723adfb154603c2565ba
-pkgver=5.15.rc6.211018.g519d819
+pkgver=5.15
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -29,8 +27,7 @@ makedepends=('bc'
     'tar'
     'xz')
 options=('!strip')
-source=("https://codeload.github.com/torvalds/linux/zip/$_commit"
-        #"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.xz"
+source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.xz"
         #"https://www.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
         'config'
         # ARCH Patches
@@ -63,7 +60,7 @@ source=("https://codeload.github.com/torvalds/linux/zip/$_commit"
         '0411-bootsplash.patch'
         '0412-bootsplash.patch'
         '0413-bootsplash.gitpatch')
-sha256sums=('c95216af3653cb508dbdf0719e93047c79d5b2e50f4ab3f58a972e47350cb356'
+sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             'a40f9196e9889ec3561e98ab1397889b4ea82a70e37a082f53a6b157daf19571'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'df5843818f1571841e1a8bdbe38d7f853d841f38de46d6a6a5765de089495578'
@@ -88,13 +85,8 @@ sha256sums=('c95216af3653cb508dbdf0719e93047c79d5b2e50f4ab3f58a972e47350cb356'
             '60e295601e4fb33d9bf65f198c54c7eb07c0d1e91e2ad1e0dd6cd6e142cb266d'
             '035ea4b2a7621054f4560471f45336b981538a40172d8f17285910d4e0e0b3ef')
 
-pkgver() {
-  printf %s.%s.%s.g%s "$_basekernel" "$_rc" "$(date +%y%m%d)" "${_commit:0:7}"
-}
-
 prepare() {
-  cd linux-$_commit
-#  cd "linux-${_basekernel}"
+  cd "linux-${_basekernel}"
 
   # add upstream patch
 #  msg "add upstream patch"
@@ -151,8 +143,7 @@ package_linux515() {
   optdepends=('crda: to set the correct wireless channels of your country')
   provides=("linux=${pkgver}" VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE)
 
-  cd linux-$_commit
-#  cd "linux-${_basekernel}"
+  cd "linux-${_basekernel}"
 
   # get kernel version
   _kernver="$(make LOCALVERSION= kernelrelease)"
@@ -191,8 +182,7 @@ package_linux515-headers() {
   depends=('gawk' 'python' 'libelf' 'pahole')
   provides=("linux-headers=$pkgver")
 
-  cd linux-$_commit
-#  cd "linux-${_basekernel}"
+  cd "linux-${_basekernel}"
   local _builddir="${pkgdir}/usr/lib/modules/${_kernver}/build"
 
   install -Dt "${_builddir}" -m644 Makefile .config Module.symvers
