@@ -8315,6 +8315,7 @@ CONFIG_DVB_SP8870=m
 #
 # Android
 #
+CONFIG_ASHMEM=y
 # end of Android
 
 CONFIG_LTE_GDM724X=m
