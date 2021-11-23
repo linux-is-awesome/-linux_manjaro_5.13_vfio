@@ -10,7 +10,7 @@ _kernelname=-MANJARO
 _basekernel=5.15
 _basever=515
 pkgver=5.15.4
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=('GPL2')
@@ -40,6 +40,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0103-futex.patch' # https://github.com/sirlucjan/kernel-patches
         '0104-revert-xhci-Add-support-for-Renesas-controller-with-memory.patch'
         '0105-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
+        '0106-Fix_OLED_brightness_control_on_eDP'
         # Lenovo + AMD
         '0201-lenovo-wmi2.patch'
         # other patches
@@ -69,6 +70,7 @@ sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             '844e66a95d7df754c55ac2f1ce7e215b1e56e20ca095462d926a993d557b20e0'
             'd9330ea593829a6ef3b824db9570253280cbff7da2b4beb47cbc037824d1a29b'
             '5e804e1f241ce542f3f0e83d274ede6aa4b0539e510fb9376f8106e8732ce69b'
+            '5de418ed899caa2756d3df8f48bd2d835b8d2087cb706eaebc37c733cb7e57d7'
             '1d58ef2991c625f6f0eb33b4cb8303932f53f1c4694e42bae24c9cd36d2ad013'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
