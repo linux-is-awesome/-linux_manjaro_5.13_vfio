@@ -40,7 +40,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0103-futex.patch' # https://github.com/sirlucjan/kernel-patches
         '0104-revert-xhci-Add-support-for-Renesas-controller-with-memory.patch'
         '0105-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
-        '0106-Fix_OLED_brightness_control_on_eDP'
+        '0106-Fix_OLED_brightness_control_on_eDP.patch'
         # Lenovo + AMD
         '0201-lenovo-wmi2.patch'
         # other patches
