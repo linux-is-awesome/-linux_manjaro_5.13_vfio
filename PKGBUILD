@@ -40,7 +40,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0103-futex.patch' # https://github.com/sirlucjan/kernel-patches
         '0104-revert-xhci-Add-support-for-Renesas-controller-with-memory.patch'
         '0105-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
-        '0106-Fix_OLED_brightness_control_on_eDP.patch'
         '0107-Revert_drm_i915_Implement_Wa_1508744258.patch::https://patchwork.freedesktop.org/patch/463649/raw/'
         '0108-drm_i915_Add_workaround_numbers_to_GEN7_COMMON_SLICE_CHICKEN1_whitelisting.patch::https://patchwork.freedesktop.org/patch/463650/raw/'
         # Lenovo + AMD
@@ -72,7 +71,6 @@ sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             '844e66a95d7df754c55ac2f1ce7e215b1e56e20ca095462d926a993d557b20e0'
             'd9330ea593829a6ef3b824db9570253280cbff7da2b4beb47cbc037824d1a29b'
             '5e804e1f241ce542f3f0e83d274ede6aa4b0539e510fb9376f8106e8732ce69b'
-            'e4eac36df3c7c7dd8e3b3b13fb2e82d8b2ac5193072b0863fced8fa8e4129304'
             '2904c783e462c5cad9c42698cfa553f4ebdb1632b07074a1cc4d855100060670'
             'e8e6120035977903a7117ba215809b9b162b64a789848107513f219180baaada'
             '1d58ef2991c625f6f0eb33b4cb8303932f53f1c4694e42bae24c9cd36d2ad013'
