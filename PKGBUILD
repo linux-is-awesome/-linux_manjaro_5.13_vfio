@@ -10,7 +10,7 @@ _kernelname=-MANJARO
 _basekernel=5.15
 _basever=515
 pkgver=5.15.6
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=('GPL2')
@@ -42,6 +42,13 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0105-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
         '0107-Revert_drm_i915_Implement_Wa_1508744258.patch::https://patchwork.freedesktop.org/patch/463649/raw/'
         '0108-drm_i915_Add_workaround_numbers_to_GEN7_COMMON_SLICE_CHICKEN1_whitelisting.patch::https://patchwork.freedesktop.org/patch/463650/raw/'
+        # Arch Patches
+        '1ac8f753e4249e6864c1c42070ba957ceef1f82a.patch'
+        '74db74ec6ce112c6137d51610429e7ac9ea5b6c1.patch'
+        '62f1f7606485d450b23f86bc18dab101e7a2443d.patch'
+        'ae3386d67597db29ad2ba2685815e224a39897bc.patch'
+        '675d4b66de78eec370cf5053eecdf00b26780af3.patch'
+        '2b3efb722d72940a61adb5898d92d8ebacd9e3a8.patch'
         # Lenovo + AMD
         '0201-lenovo-wmi2.patch'
         # other patches
