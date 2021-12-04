@@ -48,7 +48,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '62f1f7606485d450b23f86bc18dab101e7a2443d.patch'
         'ae3386d67597db29ad2ba2685815e224a39897bc.patch'
         '675d4b66de78eec370cf5053eecdf00b26780af3.patch'
-        '2b3efb722d72940a61adb5898d92d8ebacd9e3a8.patch'
         # Lenovo + AMD
         '0201-lenovo-wmi2.patch'
         # other patches
@@ -85,7 +84,6 @@ sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             'ab0360eac59329eb84f028c2f402ee4a17e4b3dfacb7957355e6178d35af87b9'
             '6846fbd7d8e05adc0b25179bc5bbd6320929d155fafd4443eff206d6b8b580ac'
             'a2a0a0542055a6a921542fbb05cedb6eb6f3d3fb0c038bfb2304bfd3931a0f71'
-            '552be02cc8939e19e46b724853be30659e9b3c52ad55d448820117d1b7ff309e'
             '1d58ef2991c625f6f0eb33b4cb8303932f53f1c4694e42bae24c9cd36d2ad013'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
