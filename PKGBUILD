@@ -42,10 +42,10 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0105-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
         '0108-drm_i915_Add_workaround_numbers_to_GEN7_COMMON_SLICE_CHICKEN1_whitelisting.patch::https://patchwork.freedesktop.org/patch/463650/raw/'
         # Arch Patches
-        '1ac8f753e4249e6864c1c42070ba957ceef1f82a.patch'
-        '74db74ec6ce112c6137d51610429e7ac9ea5b6c1.patch'
-        '62f1f7606485d450b23f86bc18dab101e7a2443d.patch'
-        'ae3386d67597db29ad2ba2685815e224a39897bc.patch'
+        'PCI_Add_more_NVIDIA_controllers_to_the_MSI_masking_quirk.patch'
+        'iommu_intel_do_deep_dma-unmapping_to_avoid_kernel-flooding.patch'
+        'cpufreq_intel_pstate_ITMT_support_for_overclocked_system.patch'
+        'Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
         '675d4b66de78eec370cf5053eecdf00b26780af3.patch'
         # Lenovo + AMD
         '0201-lenovo-wmi2.patch'
