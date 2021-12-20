@@ -46,7 +46,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         'iommu_intel_do_deep_dma-unmapping_to_avoid_kernel-flooding.patch'
         'cpufreq_intel_pstate_ITMT_support_for_overclocked_system.patch'
         'Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
-        '675d4b66de78eec370cf5053eecdf00b26780af3.patch'
+        'lg-laptop_Recognize_more_models.patch'
         # Lenovo + AMD
         '0201-lenovo-wmi2.patch'
         # other patches
