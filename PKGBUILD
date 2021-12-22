@@ -33,7 +33,11 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         # ARCH Patches
         '0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-CLONE_NEWUSER.patch'
         '0002-HID-quirks-Add-Apple-Magic-Trackpad-2-to-hid_have_special_driver-list.patch'
-        # Temp Fixes
+        'PCI_Add_more_NVIDIA_controllers_to_the_MSI_masking_quirk.patch'
+        'iommu_intel_do_deep_dma-unmapping_to_avoid_kernel-flooding.patch'
+        'cpufreq_intel_pstate_ITMT_support_for_overclocked_system.patch'
+        'Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
+        'lg-laptop_Recognize_more_models.patch'
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
 #        '0102-iomap-iomap_bmap-should-accept-unwritten-maps.patch'
@@ -41,12 +45,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0104-revert-xhci-Add-support-for-Renesas-controller-with-memory.patch'
         '0105-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
         '0108-drm_i915_Add_workaround_numbers_to_GEN7_COMMON_SLICE_CHICKEN1_whitelisting.patch::https://patchwork.freedesktop.org/patch/463650/raw/'
-        # Arch Patches
-        'PCI_Add_more_NVIDIA_controllers_to_the_MSI_masking_quirk.patch'
-        'iommu_intel_do_deep_dma-unmapping_to_avoid_kernel-flooding.patch'
-        'cpufreq_intel_pstate_ITMT_support_for_overclocked_system.patch'
-        'Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
-        'lg-laptop_Recognize_more_models.patch'
         # Lenovo + AMD
         '0201-lenovo-wmi2.patch'
         # other patches
