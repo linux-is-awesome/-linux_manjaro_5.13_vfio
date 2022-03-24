@@ -47,7 +47,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         # Lenovo + AMD
         '0201-lenovo-wmi2.patch'
         # other patches
-        "0202-mt76-mt7921-add-support-for-PCIe-ID-0x0608-0x0616.patch"
+        "0202-mt76-mt7921-add-support-for-PCIe-ID-0x7922-0x0608-0x0616.patch"
         "0203_mt76_mt7921_reduce_log_severity_levels_for_informative_messages.patch"
         # Bootsplash
         '0301-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'        
