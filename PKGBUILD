@@ -4,9 +4,9 @@
 # Tobias Powalowski <tpowa@archlinux.org>
 # Thomas Baechler <thomas@archlinux.org>
 
-pkgbase=linux515
-pkgname=('linux515' 'linux515-headers')
-_kernelname=-MANJARO
+pkgbase=linux515-vfio
+pkgname=('linux515-vfio' 'linux515-vfio-headers')
+_kernelname=-MANJARO-VFIO
 _basekernel=5.15
 _basever=515
 pkgver=5.15.32
@@ -65,10 +65,17 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0410-bootsplash.patch'
         '0411-bootsplash.patch'
         '0412-bootsplash.patch'
-        '0413-bootsplash.gitpatch')
+        '0413-bootsplash.gitpatch'
+        # VFIO
+        '0006-add-acs-overrides_iommu.patch'
+        # Optimizations
+        'more-uarches-for-kernel-5.15-5.16.patch'
+        '0002-clear-patches.patch'
+        # Nice to have
+        '0007-v5.15-winesync.patch')
 sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             'eacc8609dfcecb637f813ef4d2e13f48bdeb6143be929358f3b3cb4254f9c563'
-            '15caed316b86dad46e6c41fa6c31691131a9184b463c91e6b5a378824367b0c2'
+            '61697edba02c8c54190506686f89f326b236075f9a138966767b2ac61431d0b8'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'e2823eff3355b7c88a3fa327ea2f84f23cbd36569e0a5f0f76599023f63a52ca'
             'ce53090a4572cd6162d22225113082f7e4df5028a1230529d170460e26dcf849'
@@ -98,7 +105,11 @@ sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             'e9f22cbb542591087d2d66dc6dc912b1434330ba3cd13d2df741d869a2c31e89'
             '27471eee564ca3149dd271b0817719b5565a9594dc4d884fe3dc51a5f03832bc'
             '60e295601e4fb33d9bf65f198c54c7eb07c0d1e91e2ad1e0dd6cd6e142cb266d'
-            '035ea4b2a7621054f4560471f45336b981538a40172d8f17285910d4e0e0b3ef')
+            '035ea4b2a7621054f4560471f45336b981538a40172d8f17285910d4e0e0b3ef'
+            '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
+            '2893ca70c1812f98cbf1ea1ed0abac7b70c91b21f07c4f6c1816a769bcc34909'
+            'ac9d945c722a884429904247dc112f19ddd804c34e2ecdc2e4f5af1268706bf3'
+            '9ef1356a09eb8fee7ed221c97b2c65cfcaef62a6262e4d86dd58dcd233b6657f')
 
 prepare() {
   cd "linux-${_basekernel}"
@@ -148,7 +159,7 @@ build() {
   make ${MAKEFLAGS} LOCALVERSION= bzImage modules
 }
 
-package_linux515() {
+package_linux515-vfio() {
   pkgdesc="The ${pkgbase/linux/Linux} kernel and modules"
   depends=('coreutils' 'linux-firmware' 'kmod' 'mkinitcpio>=27')
   optdepends=('crda: to set the correct wireless channels of your country')
@@ -168,10 +179,10 @@ package_linux515() {
 
   # Used by mkinitcpio to name the kernel
   echo "${pkgbase}" | install -Dm644 /dev/stdin "${pkgdir}/usr/lib/modules/${_kernver}/pkgbase"
-  echo "${_basekernel}-${CARCH}" | install -Dm644 /dev/stdin "${pkgdir}/usr/lib/modules/${_kernver}/kernelbase"
+  echo "${_basekernel}-vfio-${CARCH}" | install -Dm644 /dev/stdin "${pkgdir}/usr/lib/modules/${_kernver}/kernelbase"
 
   # add kernel version
-  echo "${pkgver}-${pkgrel}-MANJARO x64" > "${pkgdir}/boot/${pkgbase}-${CARCH}.kver"
+  echo "${pkgver}-${pkgrel}${_kernelname} x64" > "${pkgdir}/boot/${pkgbase}-${CARCH}.kver"
 
   # make room for external modules
   local _extramodules="extramodules-${_basekernel}${_kernelname:--MANJARO}"
@@ -188,7 +199,7 @@ package_linux515() {
   depmod -b "${pkgdir}/usr" -F System.map "${_kernver}"
 }
 
-package_linux515-headers() {
+package_linux515-vfio-headers() {
   pkgdesc="Header files and scripts for building modules for ${pkgbase/linux/Linux} kernel"
   depends=('gawk' 'python' 'libelf' 'pahole')
   provides=("linux-headers=$pkgver")
