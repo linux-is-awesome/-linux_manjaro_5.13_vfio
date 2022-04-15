@@ -9,7 +9,7 @@ pkgname=('linux515-vfio' 'linux515-vfio-headers')
 _kernelname=-MANJARO-VFIO
 _basekernel=5.15
 _basever=515
-pkgver=5.15.33
+pkgver=5.15.34
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -162,7 +162,7 @@ build() {
 package_linux515-vfio() {
   pkgdesc="The ${pkgbase/linux/Linux} kernel and modules"
   depends=('coreutils' 'linux-firmware' 'kmod' 'mkinitcpio>=27')
-  optdepends=('crda: to set the correct wireless channels of your country')
+  optdepends=('wireless-regdb: to set the correct wireless channels of your country')
   provides=("linux=${pkgver}" VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE)
 
   cd "linux-${_basekernel}"
