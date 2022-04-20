@@ -9,7 +9,7 @@ pkgname=('linux515-vfio' 'linux515-vfio-headers')
 _kernelname=-MANJARO-VFIO
 _basekernel=5.15
 _basever=515
-pkgver=5.15.34
+pkgver=5.15.35
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -34,12 +34,10 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-CLONE_NEWUSER.patch'
         '0002-PCI_Add_more_NVIDIA_controllers_to_the_MSI_masking_quirk.patch'
         '0003-iommu_intel_do_deep_dma-unmapping_to_avoid_kernel-flooding.patch'
-        '0004-cpufreq_intel_pstate_ITMT_support_for_overclocked_system.patch'
         '0005-Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
         '0006-lg-laptop_Recognize_more_models.patch'
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
-#        '0102-iomap-iomap_bmap-should-accept-unwritten-maps.patch'
         '0103-futex.patch' # https://github.com/sirlucjan/kernel-patches
         '0104-revert-xhci-Add-support-for-Renesas-controller-with-memory.patch'
         '0105-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
@@ -79,7 +77,6 @@ sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'e2823eff3355b7c88a3fa327ea2f84f23cbd36569e0a5f0f76599023f63a52ca'
             'ce53090a4572cd6162d22225113082f7e4df5028a1230529d170460e26dcf849'
-            'ab0360eac59329eb84f028c2f402ee4a17e4b3dfacb7957355e6178d35af87b9'
             '76701599bbafa49b90ccb073ef29ce2dc3731566e8fa852bd1e9e7796e184754'
             'a2a0a0542055a6a921542fbb05cedb6eb6f3d3fb0c038bfb2304bfd3931a0f71'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
