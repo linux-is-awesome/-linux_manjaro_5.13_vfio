@@ -9,7 +9,7 @@ pkgname=('linux515' 'linux515-headers')
 _kernelname=-MANJARO
 _basekernel=5.15
 _basever=515
-pkgver=5.15.47
+pkgver=5.15.48
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -65,7 +65,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0412-bootsplash.patch'
         '0413-bootsplash.gitpatch')
 sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
-            '1a9a61db4b613190278cc1a4ba77bd597feaae8c4276e0c6103fcacc78b09c5a'
+            '2490262bdcfc28df4903cdba9b651a7f1b695c005f4663b0ca54a180022b4065'
             'b8ae9ec98eac7767ef387c38107373861247ec5d8fdc339be5465101eeefcfdf'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'e2823eff3355b7c88a3fa327ea2f84f23cbd36569e0a5f0f76599023f63a52ca'
