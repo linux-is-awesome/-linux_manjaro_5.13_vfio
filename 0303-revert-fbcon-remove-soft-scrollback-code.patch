@@ -283,9 +283,9 @@
  			count = vc->vc_rows;
 +		if (softback_top)
 +			fbcon_softback_note(vc, t, count);
- 		if (logo_shown >= 0)
- 			goto redraw_up;
- 		switch (p->scrollmode) {
+ 		switch (fb_scrollmode(p)) {
+ 		case SCROLL_MOVE:
+ 			fbcon_redraw_blit(vc, info, p, t, b - t - count,
 @@ -2084,6 +2269,14 @@
  	info = registered_fb[con2fb_map[vc->vc_num]];
  	ops = info->fbcon_par;
