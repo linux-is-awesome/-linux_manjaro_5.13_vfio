@@ -36,7 +36,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0003-iommu_intel_do_deep_dma-unmapping_to_avoid_kernel-flooding.patch'
         '0004-Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
         '0005-lg-laptop_Recognize_more_models.patch'
-        '0006-Fix-NFSv4-mount-regression.patch'
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
         '0103-futex.patch' # https://github.com/sirlucjan/kernel-patches
@@ -49,7 +48,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         "0202-mt76-mt7921-add-support-for-PCIe-ID-0x7922-0x0608-0x0616.patch"
         "0203_mt76_mt7921_reduce_log_severity_levels_for_informative_messages.patch"
         # Bootsplash
-        '0301-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'        
+        '0301-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'
         '0302-revert-fbcon-remove-no-op-fbcon_set_origin.patch'
         '0303-revert-fbcon-remove-soft-scrollback-code.patch'
         '0401-bootsplash.patch'
@@ -67,13 +66,12 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0413-bootsplash.gitpatch')
 sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             'fa008348df3e6a39a89be0cf1ebd03d333b8aa6ec008c5e7b5d9fcb36ee1ca47'
-            '48d5c16526d70be9696b161714cf2c5ea51d31baa2b2ba2fbd4ac1cb56da8572'
+            '7ee013573b1f1536428a9909edfca2e7a030b36f5b158c9b449f50c63b5e5619'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'e2823eff3355b7c88a3fa327ea2f84f23cbd36569e0a5f0f76599023f63a52ca'
             'ce53090a4572cd6162d22225113082f7e4df5028a1230529d170460e26dcf849'
             '76701599bbafa49b90ccb073ef29ce2dc3731566e8fa852bd1e9e7796e184754'
             'a2a0a0542055a6a921542fbb05cedb6eb6f3d3fb0c038bfb2304bfd3931a0f71'
-            'adf30747961455f124a43d813d0353835697547d41f2221c788f9de312c3b4f0'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
             '844e66a95d7df754c55ac2f1ce7e215b1e56e20ca095462d926a993d557b20e0'
             'd9330ea593829a6ef3b824db9570253280cbff7da2b4beb47cbc037824d1a29b'
