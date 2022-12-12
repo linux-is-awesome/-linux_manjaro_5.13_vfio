@@ -147,7 +147,7 @@ build() {
 
 package_linux515() {
   pkgdesc="The ${pkgbase/linux/Linux} kernel and modules"
-  depends=('coreutils' 'linux-firmware' 'kmod' 'mkinitcpio>=27')
+  depends=('coreutils' 'linux-firmware' 'kmod' 'initramfs')
   optdepends=('wireless-regdb: to set the correct wireless channels of your country')
   provides=("linux=${pkgver}" VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE)
 
@@ -195,7 +195,7 @@ package_linux515-headers() {
 
   install -Dt "${_builddir}" -m644 Makefile .config Module.symvers
   install -Dt "${_builddir}/kernel" -m644 kernel/Makefile
-  install -Dt "${_builddir}" -m644 vmlinux  
+  install -Dt "${_builddir}" -m644 vmlinux
 
   mkdir "${_builddir}/.tmp_versions"
 
@@ -254,7 +254,7 @@ package_linux515-headers() {
     esac
   done < <(find "${_builddir}" -type f -perm -u+x ! -name vmlinux -print0 2>/dev/null)
   strip $STRIP_STATIC "${_builddir}/vmlinux"
-  
+
   # remove unwanted files
   find ${_builddir} -name '*.orig' -delete
 }
