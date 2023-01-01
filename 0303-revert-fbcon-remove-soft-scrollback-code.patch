@@ -283,9 +283,9 @@
  			count = vc->vc_rows;
 +		if (softback_top)
 +			fbcon_softback_note(vc, t, count);
- 		if (logo_shown >= 0)
- 			goto redraw_up;
- 		switch (p->scrollmode) {
+ 		switch (fb_scrollmode(p)) {
+ 		case SCROLL_MOVE:
+ 			fbcon_redraw_blit(vc, info, p, t, b - t - count,
 @@ -2084,6 +2269,14 @@
  	info = registered_fb[con2fb_map[vc->vc_num]];
  	ops = info->fbcon_par;
@@ -312,14 +312,14 @@
  	if (p->userfont)
  		old_data = vc->vc_font.data;
 @@ -2432,6 +2628,8 @@
- 		cols /= w;
- 		rows /= h;
- 		vc_resize(vc, cols, rows);
+		ret = vc_resize(vc, cols, rows);
+		if (ret)
+			goto err_out;
 +		if (con_is_visible(vc) && softback_buf)
 +			fbcon_update_softback(vc);
- 	} else if (con_is_visible(vc)
- 		   && vc->vc_mode == KD_TEXT) {
- 		fbcon_clear_margins(vc, 0);
+	} else if (con_is_visible(vc)
+		   && vc->vc_mode == KD_TEXT) {
+		fbcon_clear_margins(vc, 0);
 @@ -2590,7 +2788,19 @@
  
  static u16 *fbcon_screen_pos(struct vc_data *vc, int offset)

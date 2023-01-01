@@ -9,7 +9,7 @@ pkgname=('linux515' 'linux515-headers')
 _kernelname=-MANJARO
 _basekernel=5.15
 _basever=515
-pkgver=5.15.55
+pkgver=5.15.67
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -34,8 +34,9 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-CLONE_NEWUSER.patch'
         '0002-PCI_Add_more_NVIDIA_controllers_to_the_MSI_masking_quirk.patch'
         '0003-iommu_intel_do_deep_dma-unmapping_to_avoid_kernel-flooding.patch'
-        '0005-Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
-        '0006-lg-laptop_Recognize_more_models.patch'
+        '0004-Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
+        '0005-lg-laptop_Recognize_more_models.patch'
+        '0006-Fix-NFSv4-mount-regression.patch'
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
         '0103-futex.patch' # https://github.com/sirlucjan/kernel-patches
@@ -65,13 +66,16 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0412-bootsplash.patch'
         '0413-bootsplash.gitpatch')
 sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
-            'a40a27adb37c5ac569428c517f3eb51ce1148258db5b8a42aadb79128197d4a0'
-            '795ffea7d95fa7aa00f3e2aa3fbebfa7f11a8cc8c75358a7160a24e352c15ead'
+            'eacc8609dfcecb637f813ef4d2e13f48bdeb6143be929358f3b3cb4254f9c563'
+            '61697edba02c8c54190506686f89f326b236075f9a138966767b2ac61431d0b8'
+            '2af2af357eb2ee2ee91edd1969a920377dcf28c9c0c06abd4006500e61140bc5'
+            '48d5c16526d70be9696b161714cf2c5ea51d31baa2b2ba2fbd4ac1cb56da8572'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'e2823eff3355b7c88a3fa327ea2f84f23cbd36569e0a5f0f76599023f63a52ca'
             'ce53090a4572cd6162d22225113082f7e4df5028a1230529d170460e26dcf849'
             '76701599bbafa49b90ccb073ef29ce2dc3731566e8fa852bd1e9e7796e184754'
             'a2a0a0542055a6a921542fbb05cedb6eb6f3d3fb0c038bfb2304bfd3931a0f71'
+            'adf30747961455f124a43d813d0353835697547d41f2221c788f9de312c3b4f0'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
             '844e66a95d7df754c55ac2f1ce7e215b1e56e20ca095462d926a993d557b20e0'
             'd9330ea593829a6ef3b824db9570253280cbff7da2b4beb47cbc037824d1a29b'
@@ -82,7 +86,7 @@ sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             'f8fc51c0c644ae743154c37b77ade50fa5a950980c9dd56d8752e4d6b5dfb153'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
-            '1f18c5c10a3c63e41ecd05ad34cd9f6653ba96e9f1049ce2b7bb6da2578ae710'
+            'ed2a8afc9e3e5f73226b84e10e580ea208752702d8528b994681c5063a6ffa07'
             '59202940d4f12bad23c194a530edc900e066866c9945e39748484a6545af96de'
             'e096b127a5208f56d368d2cb938933454d7200d70c86b763aa22c38e0ddb8717'
             '8c1c880f2caa9c7ae43281a35410203887ea8eae750fe8d360d0c8bf80fcc6e0'
