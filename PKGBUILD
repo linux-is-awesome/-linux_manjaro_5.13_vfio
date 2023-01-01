@@ -9,7 +9,7 @@ pkgname=('linux515-vfio' 'linux515-vfio-headers')
 _kernelname=-MANJARO-VFIO
 _basekernel=5.15
 _basever=515
-pkgver=5.15.67
+pkgver=5.15.85
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -36,7 +36,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         '0003-iommu_intel_do_deep_dma-unmapping_to_avoid_kernel-flooding.patch'
         '0004-Bluetooth_btintel_Fix_bdaddress_comparison_with_garbage_value.patch'
         '0005-lg-laptop_Recognize_more_models.patch'
-        '0006-Fix-NFSv4-mount-regression.patch'
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
         '0103-futex.patch' # https://github.com/sirlucjan/kernel-patches
@@ -49,7 +48,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         "0202-mt76-mt7921-add-support-for-PCIe-ID-0x7922-0x0608-0x0616.patch"
         "0203_mt76_mt7921_reduce_log_severity_levels_for_informative_messages.patch"
         # Bootsplash
-        '0301-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'        
+        '0301-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'
         '0302-revert-fbcon-remove-no-op-fbcon_set_origin.patch'
         '0303-revert-fbcon-remove-soft-scrollback-code.patch'
         '0401-bootsplash.patch'
@@ -82,7 +81,6 @@ sha256sums=('57b2cf6991910e3b67a1b3490022e8a0674b6965c74c12da1e99d138d1991ee8'
             'ce53090a4572cd6162d22225113082f7e4df5028a1230529d170460e26dcf849'
             '76701599bbafa49b90ccb073ef29ce2dc3731566e8fa852bd1e9e7796e184754'
             'a2a0a0542055a6a921542fbb05cedb6eb6f3d3fb0c038bfb2304bfd3931a0f71'
-            'adf30747961455f124a43d813d0353835697547d41f2221c788f9de312c3b4f0'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
             '844e66a95d7df754c55ac2f1ce7e215b1e56e20ca095462d926a993d557b20e0'
             'd9330ea593829a6ef3b824db9570253280cbff7da2b4beb47cbc037824d1a29b'
@@ -162,7 +160,7 @@ build() {
 
 package_linux515-vfio() {
   pkgdesc="The ${pkgbase/linux/Linux} kernel and modules"
-  depends=('coreutils' 'linux-firmware' 'kmod' 'mkinitcpio>=27')
+  depends=('coreutils' 'linux-firmware' 'kmod' 'initramfs')
   optdepends=('wireless-regdb: to set the correct wireless channels of your country')
   provides=("linux=${pkgver}" VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE)
 
@@ -210,7 +208,7 @@ package_linux515-vfio-headers() {
 
   install -Dt "${_builddir}" -m644 Makefile .config Module.symvers
   install -Dt "${_builddir}/kernel" -m644 kernel/Makefile
-  install -Dt "${_builddir}" -m644 vmlinux  
+  install -Dt "${_builddir}" -m644 vmlinux
 
   mkdir "${_builddir}/.tmp_versions"
 
@@ -269,7 +267,7 @@ package_linux515-vfio-headers() {
     esac
   done < <(find "${_builddir}" -type f -perm -u+x ! -name vmlinux -print0 2>/dev/null)
   strip $STRIP_STATIC "${_builddir}/vmlinux"
-  
+
   # remove unwanted files
   find ${_builddir} -name '*.orig' -delete
 }
